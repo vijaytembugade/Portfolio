@@ -1,0 +1,250 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg" href="/favicon.svg"><!-- <link rel="icon" type="image/svg" href="/favicon.svg" media="(prefers-color-scheme: light)" sizes="32x32"> --><!-- <link rel="icon" type="image/x-icon" href="/favicon.svg" sizes="32x32"> --><meta name="generator" content="Astro v4.14.6"><!-- Canonical URL --><link rel="canonical" href="https://astro-nano-demo.vercel.app/"><!-- Primary Meta Tags --><title>Vijay Tembugade | Porfolio | Hi, I&#39;m Vijay</title><meta name="title" content="Vijay Tembugade | Porfolio | Hi, I'm Vijay"><meta name="description" content="Vijay Tembugade is a software engineer with a passion for building innovative solutions. Explore my portfolio to see my work and projects."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://astro-nano-demo.vercel.app/"><meta property="og:title" content="Vijay Tembugade | Porfolio | Hi, I'm Vijay"><meta property="og:description" content="Vijay Tembugade is a software engineer with a passion for building innovative solutions. Explore my portfolio to see my work and projects."><meta property="og:image" content="https://astro-nano-demo.vercel.app/nano.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://astro-nano-demo.vercel.app/"><meta property="twitter:title" content="Vijay Tembugade | Porfolio | Hi, I'm Vijay"><meta property="twitter:description" content="Vijay Tembugade is a software engineer with a passion for building innovative solutions. Explore my portfolio to see my work and projects."><meta property="twitter:image" content="https://astro-nano-demo.vercel.app/nano.png"><script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    const toggleThemeButton = document.getElementById("toggleDarkMode");
+
+    toggleThemeButton?.addEventListener("click", () => {
+      const theme = localStorage.getItem("theme");
+      const flag = toggleTheme(false);
+      if(theme === "dark"){
+        localStorage.setItem("theme", "light");
+        toggleTheme(false);
+      }else{
+        localStorage.setItem("theme", "dark");
+        toggleTheme(true);
+      }
+      console.log({theme, flag});
+    });
+
+    const systemThemeButton = document.getElementById("system-theme-button");
+    systemThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "system");
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    });
+
+    window.matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", event => {
+        if (localStorage.theme === "system") {
+          toggleTheme(event.matches);
+        }
+      }
+    );
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  function msToTime(ms) {
+  if(ms < 1000){
+    return ms.toFixed(1) + " Ms";
+  }
+  let seconds = (ms / 1000).toFixed(1);
+  let minutes = (ms / (1000 * 60)).toFixed(1);
+  let hours = (ms / (1000 * 60 * 60)).toFixed(1);
+  let days = (ms / (1000 * 60 * 60 * 24)).toFixed(1);
+  if (seconds < 60) return seconds + " Sec";
+  else if (minutes < 60) return minutes + " Min";
+  else if (hours < 24) return hours + " Hrs";
+  else return days + " Days";
+}
+window.addEventListener("load", () => {
+  var loadTime = window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart; 
+  const loadPara = document.getElementById("loadTime");
+    console.log("Page load time is ", msToTime(loadTime), loadPara);
+    loadPara.innerText = `Page loaded in ${msToTime(loadTime)}`;
+  });
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><link rel="stylesheet" href="/_astro/_slug_.zZt2PGOr.css"><script type="module">document.addEventListener("astro:before-swap",e=>[...e.newDocument.head.querySelectorAll('link[as="font"]')].forEach(o=>o.remove()));
+</script></head> <body> <header> <div class="mx-auto max-w-screen-sm md:max-w-screen-md px-5">  <div class="flex justify-between items-center"> <div class="w-full flex flex-wrap gap-y-2 justify-between items-center"> <a href="/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out dark:text-white text-black">  <div class="text-xl font-semibold"> Hi, I&#39;m Vijay </div>  </a> <nav class="flex gap-1 items-center"> <a href="/blog" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out"> 
+Blog
+ </a> <span> / </span> <a href="/work" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out"> 
+Work
+ </a> <span> / </span> <a href="/projects" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out"> 
+Projects
+ </a> </nav> </div> <div> <button id="toggleDarkMode" class="relative rounded-md p-1 ml-2 transition-all"> <span class="sr-only">Dark Theme</span> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="h-[1.6rem] w-[1.6rem] rotate-0 scale-100 transition-all dark:hidden dark:-rotate-90 dark:scale-0"><path fill="currentColor" d="M12 15q1.25 0 2.125-.875T15 12q0-1.25-.875-2.125T12 9q-1.25 0-2.125.875T9 12q0 1.25.875 2.125T12 15m0 1q-1.671 0-2.836-1.164T8 12q0-1.671 1.164-2.836T12 8q1.671 0 2.836 1.164T16 12q0 1.671-1.164 2.836T12 16m-7-3.5H1.5v-1H5zm17.5 0H19v-1h3.5zM11.5 5V1.5h1V5zm0 17.5V19h1v3.5zM6.746 7.404l-2.16-2.098l.695-.744l2.111 2.134zM18.72 19.438l-2.117-2.14l.652-.702l2.16 2.098zM16.596 6.746l2.098-2.16l.744.695l-2.134 2.111zM4.562 18.72l2.14-2.117l.663.652l-2.078 2.179zM12 12"></path></svg> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="hidden h-[1.6rem] w-[1.6rem] rotate-90 scale-0 transition-all dark:block dark:rotate-0 dark:scale-100"><path fill="currentColor" d="M12.058 20q-3.334 0-5.667-2.333Q4.058 15.333 4.058 12q0-3.038 1.98-5.27Q8.02 4.5 10.942 4.097q.081 0 .159.006t.153.017q-.506.706-.801 1.57q-.295.865-.295 1.811q0 2.667 1.866 4.533q1.867 1.867 4.534 1.867q.952 0 1.813-.295q.862-.295 1.548-.801q.012.075.018.153q.005.078.005.158q-.384 2.923-2.615 4.904T12.057 20"></path></svg> </button> </div> </div>  </div> </header> <main>  <div class="mx-auto max-w-screen-sm md:max-w-screen-md px-5">  <div class="flex flex-col-reverse sm:flex-row items-start justify-between"> <h2 class="animate text-2xl sm:text-3xl font-semibold dark:text-white/50 mb-6">
+Code, Build & Ship
+</h2> <p id="loadTime" class="animate font-bold mb-2 sm:mb-0"></p> </div>  <div class="space-y-16"> <section class="space-y-3 text-black dark:text-white"> <p class="animate">
+I'm Vijay Tembugade,<strong>
+Product-Centric Fullstack Developer
+</strong>
+with over 4 years of experience, specializing in building high-performance,
+          scalable, and maintainable web applications. My passion lies in deeply
+          understanding end to end product needs and translating them into robust,
+          user-centric solutions.
+</p> <p class="animate">
+Currently working at <strong>Intangles Lab</strong>, as Senior
+          Software Engineer, Building B2B SAAS platform for Fleet Management and
+          Vehicle Telematics solutions.
+</p> <p class="animate">
+I possess a robust skill set spanning <strong>Frontend</strong> Technologies
+          such as ReactJS, JavaScript & TypeScript, HTML5, CSS3, Redux, Webpack,
+          NextJs, MaterialUI, TailwindCSS, Data Grids, Storybook, Circle-CI, and
+          GitHub Actions. My expertise also encompasses <strong>Backend</strong>
+Technologies including NodeJS, ExpressJS, MongoDB, Prisma, JWT, PostgreSQL,
+          and Ruby on Rails
+</p> <!-- <p class="animate">
+          At Intangles Lab, I spearheaded the migration of frontend tech stacks,
+          significantly optimizing performance by reducing bundle size by 52%
+          and improving Redux store management. I also developed over 40+
+          reusable Storybook UI components, establishing a consistent design
+          language. My work included integrating Google Maps APIs for real-time
+          vehicle tracking and developing various comprehensive dashboards for
+          certification, financial analysis, and predictive health. I also
+          optimized deployment pipelines, reducing CircleCI build time by
+          approximately 25% and migrating to GitHub Actions.
+        </p>
+        <p class="animate">
+          Before this, I contributed to e-commerce platform development at
+          Mirraw, focusing on user-friendly interfaces and system efficiency. I
+          actively share my expertise through tech talks at ReactJsPune and
+          contribute to open-source projects, and I'm always open to new
+          collaborations or mentorship opportunities.
+        </p> --> </section> <section class="flex animate gap-3 items-center"> <a href="https://www.linkedin.com/in/vijaytembugade/" target="_blank" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2 animate w-10 fill-black/50 hover:fill-black hover:dark:fill-white dark:fill-white/50 cursor-pointer">  <svg viewBox="0 0 24 24" data-v-18fff711=""><title data-v-18fff711="">linkedin</title> <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z" data-v-18fff711=""></path></svg>  </a> <a href="https://github.com/vijaytembugade" target="_blank" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2 animate w-10 fill-black/50 hover:fill-black hover:dark:fill-white dark:fill-white/50 cursor-pointer">  <svg viewBox="0 0 24 24" data-v-18fff711=""><title data-v-18fff711="">github</title> <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" data-v-18fff711=""></path></svg>  </a> <a href="mailto:vijaytembugade21@gmail.com" target="_blank" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2 animate w-10 fill-black/50 hover:fill-black hover:dark:fill-white dark:fill-white/50 cursor-pointer">  <svg viewBox="0 0 24 24" data-v-18fff711=""><title data-v-18fff711="">email</title> <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" data-v-18fff711=""></path></svg>  </a> <a href="https://drive.google.com/file/d/1d-VvL2HkwpaUho6WxFLQQQoAN3asP4RU/view?usp=sharing" target="_blank" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2 animate text-xl w-10 fill-black/50 hover:fill-black hover:dark:fill-white dark:fill-white/50 cursor-pointer"> 
+Resume
+ </a> </section> <section class="animate space-y-6"> <div class="flex flex-wrap gap-y-2 items-center justify-between"> <h5 class="font-semibold text-xl text-black dark:text-white">
+Latest posts
+</h5> <a href="/blog" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2">  See all posts  </a> </div> <ul class="flex flex-col gap-4"> <li> <a href="/blog/why-react-is-not-a-framework" class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <div class="flex flex-col flex-1 truncate"> <div class="font-semibold"> Why React is not a framework ? </div> <div class="text-sm"> React is a library not a framework because ... </div> </div> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 right-2 -translate-y-1/2 size-5 stroke-2 fill-none stroke-current"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-3 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 19 12 12 19" class="-translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> </a> </li><li> <a href="/blog/the-bundle-size-matters" class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <div class="flex flex-col flex-1 truncate"> <div class="font-semibold"> The BUNDLE size matters! </div> <div class="text-sm"> More about lazy loading and bundle size </div> </div> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 right-2 -translate-y-1/2 size-5 stroke-2 fill-none stroke-current"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-3 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 19 12 12 19" class="-translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> </a> </li><li> <a href="/blog/when-not-to-use-memo-" class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <div class="flex flex-col flex-1 truncate"> <div class="font-semibold"> When NOT to use React.memo ? </div> <div class="text-sm"> More about memoisation in react application </div> </div> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 right-2 -translate-y-1/2 size-5 stroke-2 fill-none stroke-current"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-3 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 19 12 12 19" class="-translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> </a> </li> </ul> </section> <section class="animate space-y-6"> <div class="flex flex-wrap gap-y-2 items-center justify-between"> <h1 class="font-semibold text-xl text-black dark:text-white">
+Work Experience
+</h1> <a href="/work" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2">  See all work  </a> </div> <ul class="flex flex-col space-y-4"> <li> <div class="text-sm opacity-75"> Aug 2022 -  current </div> <div class="text-xl font-semibold text-black dark:text-white"> Intangles Lab, Pune </div> <div class="text-sm opacity-75">Senior Frontend Developer</div> <article> <h4 id="project-metamorphosis-performance-optimization-and-ui-revamp">Project Metamorphosis: Performance Optimization and UI Revamp</h4>
+<ul>
+<li>Led the migration of the frontend tech stack from React v16 to v18, Material-UI v4 to v6, and Node 12 to 20, ensuring compatibility and leveraging new features.</li>
+<li>Developed and documented over 30 reusable UI components in Storybook to establish a consistent design language.</li>
+<li>Collaborated with the design/UX team to implement a comprehensive design system (Typography, Colors, Spacings, Theme), standardizing UI elements and decreasing design inconsistencies.</li>
+<li>Enhanced performance by optimizing builds and JavaScript bundles, reducing the initial bundle size by 52% using SplitChunks (webpack plugin) and code splitting.</li>
+<li>Optimized Redux store management with data normalization techniques, improving performance by 30% and enhancing list/grid layout performance by virtualization.</li>
+</ul>
+<h4 id="google-maps-api-integration">Google Maps API Integration</h4>
+<ul>
+<li>Integrated Google Maps APIs to display approximately 2 lakh vehicle/genset locations using markers, polylines, and infowindows.</li>
+<li>Developed vehicle movement visualization and real-time tracking via WebSocket connections.</li>
+</ul>
+<h4 id="dashboard-development-for-vehicle-certification-and-data-management">Dashboard Development for Vehicle Certification and Data Management</h4>
+<ul>
+<li>
+<p>Designed dashboards for AIS/non-AIS vehicle certifications along with advanced filtering, sorting, and file upload/export features with polling mechanisms to monitor and display background job statuses.</p>
+</li>
+<li>
+<p>Built a financial dashboard for fleet profit/loss analysis and a supervisor assignment feature with role-based access control</p>
+</li>
+</ul>
+<h4 id="predictive-health-algorithm-showcase-and-data-visualization">Predictive Health Algorithm Showcase and Data Visualization</h4>
+<ul>
+<li>Built predictive real-time Air Intake Diagnosis (AID) and Battery Temperature Forecasting (BTF) charts using Chart.js.</li>
+<li>Managed 8+ charts displaying AI algorithm outcomes for vehicle health matrices.</li>
+</ul>
+<h4 id="reports-and-summary">Reports and Summary</h4>
+<ul>
+<li>Designed 7+ reports for vehicle trips, history, and journey details with sorting, filtering, and export features using React-Data-Grid &#x26; MUI-data-grids.</li>
+<li>Developed a Vehicle Summary Page with detailed metrics like alerts, fuel usage, and mileage lead to ~20% improvement in user engagement. .</li>
+</ul>
+<h4 id="deployment-pipeline-optimization-and-migration">Deployment Pipeline Optimization and Migration</h4>
+<ul>
+<li>Reduced CircleCI build time by ~25% by upgrading package dependencies and react version, along with webpack config changes.</li>
+<li>Migrated deployment pipeline to github action along with manual and automatic workflows with help of github app.</li>
+</ul>
+<h4 id="customer-experience-solutions-and-apis-contributions">Customer Experience Solutions and API’s Contributions</h4>
+<ul>
+<li>Resolved 170+ bugs, improving system’s bug free performance by ~27%.</li>
+<li>Integrated Mixpanel for user action tracking and followed contribution in internationalization (i18n) for global
+user support.</li>
+<li>Designed and implemented scalable RESTful APIs using Express.js and Node.js, integrating with MongoDB for efficient data storage and retrieval.</li>
+<li>Architected and developed background job processing system using to automate report generation and short-polling tasks.</li>
+</ul>
+<h4 id="tech-stack">TECH STACK:</h4>
+<p>ReactJS, JavaScript, NextJS, TypeScript, Express, Webpack, NodeJS, Redux, Redux-Saga, Chart.js, AngularJS, Material-UI, Storybook, GitHub Actions, Circle CI, Data Grids</p> </article> </li><li> <div class="text-sm opacity-75"> Jun 2021 - Jul 2022 </div> <div class="text-xl font-semibold text-black dark:text-white"> Mirraw </div> <div class="text-sm opacity-75">Software Engineer</div> <article> <h4 id="e-commerce-platform-development--maintenance">E-commerce Platform Development &#x26; Maintenance</h4>
+<ul>
+<li>Developed and maintained an e-commerce web app built with React and Ruby on Rails.</li>
+<li>Designed user interfaces using ERB, HAML, React, and SCSS for better user experiences.</li>
+<li>Integrated Sidekiq for background processes and monitored rake tasks for system efficiency.</li>
+<li>Debugged issues using Pry and ORM, ensuring smooth functionality and performance.</li>
+</ul>
+<h4 id="warehouse-and-inventory-system-management-and-documentation">Warehouse and Inventory System Management and Documentation.</h4>
+<ul>
+<li>Collaborated with the Growth and Sells Team to resolve daily user-facing issues.</li>
+<li>Maintained and documented the warehouse management system, ensuring operational clarity.</li>
+</ul>
+<h4 id="tech-stack">TECH STACK</h4>
+<p>React, Ruby on Rails, JavaScript, CSS, HTML, Sidekiq, Pry, ORM, and various Ruby gems.</p> </article> </li> </ul> </section> <section class="animate space-y-6"> <div class="flex flex-wrap gap-y-2 items-center justify-between"> <h1 class="font-semibold text-xl text-black dark:text-white">
+Personal projects
+</h1> <a href="/projects" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2">  See all projects  </a> </div> <ul class="flex flex-col gap-4"> <li> <a href="/projects/file-folder-structure" class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <div class="flex flex-col flex-1 truncate"> <div class="font-semibold"> Nested File and Folder </div> <div class="text-sm"> Recursive folder and file creation, read and update </div> </div> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 right-2 -translate-y-1/2 size-5 stroke-2 fill-none stroke-current"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-3 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 19 12 12 19" class="-translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> </a> </li><li> <a href="/projects/campaign-management-app" class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <div class="flex flex-col flex-1 truncate"> <div class="font-semibold"> Campaign Management Web App using Remix </div> <div class="text-sm"> Remix based web application for campaign management </div> </div> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 right-2 -translate-y-1/2 size-5 stroke-2 fill-none stroke-current"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-3 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 19 12 12 19" class="-translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> </a> </li><li> <a href="/projects/dynamatics" class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <div class="flex flex-col flex-1 truncate"> <div class="font-semibold"> Dynamatics </div> <div class="text-sm"> Charting and Data Visualization Project </div> </div> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 right-2 -translate-y-1/2 size-5 stroke-2 fill-none stroke-current"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-3 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 19 12 12 19" class="-translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> </a> </li> </ul> </section> </div>  </div>  </main> <footer class="animate"> <div class="mx-auto max-w-screen-sm md:max-w-screen-md px-5">  <div class="relative"> <div class="absolute right-0 -top-20"> <button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm">
+Back to top
+</div> </button> </div> </div> <div class="flex flex-wrap flex-col sm:flex-row justify-between items-center"> <div>
+&copy; 2025 | Vijay Tembugade
+</div> <div class="flex flex-wrap gap-1 items-center">
+vijaytembugade21@gmail.com
+</div> </div>  </div> </footer> </body></html>
