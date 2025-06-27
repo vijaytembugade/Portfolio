@@ -1,69 +1,55 @@
 ---
-title: "Stalive"
-description: "A youtube clone."
-date: "April 17 2022"
-demoURL: "https://stalive.netlify.app/"
-repoURL: "https://github.com/MiheerTamkhane/STAlive-video"
+title: "Aayat - A video Library web App"
+description: "Aayat is a video library project for those who loves to listen and watch Mushiras, Poetry, Soft, Qawwali and soulful music. It has specific content for specific user, where user can enjoy his day listening and viewing it."
+date: "May 17 2022"
+demoURL: "https://aayat.netlify.app/"
+repoURL: "https://github.com/vijaytembugade/Xenon-Video-Library"
 ---
 
-# STAlive video library for best motivational videos
+# Aayat - A video Library web App
 
+Aayat is a video library project for those who loves to listen and watch Mushiras, Poetry, Soft, Qawwali and soulful music. It has specific content for specific user, where user can enjoy his day listening and viewing it.
 
-## Quick Start
+## Live preview Link
 
-Preview Link : [Stalive](https://stalive.netlify.app/)
-
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/MiheerTamkhane/STAlive-video.git
-```
-
-Go to the project directory
-
-```bash
-  cd STAlive-video
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run start
-```
-
-## Features Available.
-
-- Home Page with all videos and Filters by category and search
-- Video Listing Page
-- Like Feature
-- History
-- Watch Later Functionality
-- Playlist
-  - Add to Playlist
-  - Create Playlist
-  - Delete Playlist
-- Authentication
-  - Login
-  - Sigup
-  - Guest Login
-- Fully Resposive
-- Sort By
-  - Category
-  - New/Oldest/Most viewd
-  - Topics
-  - Duration
-
+https://aayat.netlify.app/
 
 ## Tech Stack
 
-**Client:** React, React Context API + useReducer , React Router v6 , Crystal UI for CSS
+- React
+- MockBee (Mock-backend)
+- Xenon-Designs (A component Library)
 
-**Server:** Mockbee.
+## How to Start on local system
+
+1. clone the repo `git clone https://github.com/vijaytembugade/Xenon-Ecommerce-App`
+2. change the directory to cloned repo
+3. open command-prompt or terminal
+4. type `npm install`
+5. then `npm start`
+
+## Functionalities
+
+- Video Listings
+- Playlist Management - create,update and delete
+- Filter by category, author and creator
+- Frontend Authentication
+- Responsive design
+- Like video
+- Watch Later functionality
+- History
+
+## Utilization
+
+- Context API and useReducers
+- React-Carousel
+- Frontend authentication(with JWT)
+- Localstorage
+- React-Ruter v6.0
+- Axios
+- React Hot toast
+- React player
+
+## Author
+
+@vijaytembugade

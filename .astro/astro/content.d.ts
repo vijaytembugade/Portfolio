@@ -151,121 +151,156 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"05-markdown-syntax/index.md": {
-	id: "05-markdown-syntax/index.md";
-  slug: "05-markdown-syntax";
+"Setting up Git with SSH./index.md": {
+	id: "Setting up Git with SSH./index.md";
+  slug: "setting-up-git-with-ssh";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"06-mdx-syntax/index.mdx": {
-	id: "06-mdx-syntax/index.mdx";
-  slug: "06-mdx-syntax";
+"The Mail Signature A Story/index.md": {
+	id: "The Mail Signature A Story/index.md";
+  slug: "the-mail-signature-a-story";
   body: string;
   collection: "blog";
-  data: any
-} & { render(): Render[".mdx"] };
-"accordion-in-react/index.md": {
-	id: "accordion-in-react/index.md";
-  slug: "accordion-in-react";
-  body: string;
-  collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"arrays-in-javascript/index.md": {
-	id: "arrays-in-javascript/index.md";
-  slug: "arrays-in-javascript";
+"The-BUNDLE-size-matters!/index.md": {
+	id: "The-BUNDLE-size-matters!/index.md";
+  slug: "the-bundle-size-matters";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"closure-in-javascript/index.md": {
-	id: "closure-in-javascript/index.md";
-  slug: "closure-in-javascript";
+"When-NOT-to-use-memo /index.md": {
+	id: "When-NOT-to-use-memo /index.md";
+  slug: "when-not-to-use-memo-";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"functions-in-javascript/index.md": {
-	id: "functions-in-javascript/index.md";
-  slug: "functions-in-javascript";
+"js-before-js-framework/index.md": {
+	id: "js-before-js-framework/index.md";
+  slug: "js-before-js-framework";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"hoisting-in-javascript/index.md": {
-	id: "hoisting-in-javascript/index.md";
-  slug: "hoisting-in-javascript";
+"keylogger-in-python/index.md": {
+	id: "keylogger-in-python/index.md";
+  slug: "keylogger-in-python";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"testing-framework-javascript/index.md": {
-	id: "testing-framework-javascript/index.md";
-  slug: "testing-framework-javascript";
+"online-offline-status-check-with-custome-hook/index.md": {
+	id: "online-offline-status-check-with-custome-hook/index.md";
+  slug: "online-offline-status-check-with-custome-hook";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"this-in-js/index.md": {
+	id: "this-in-js/index.md";
+  slug: "this-in-js";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"why-react-is-not-a-framework/index.md": {
+	id: "why-react-is-not-a-framework/index.md";
+  slug: "why-react-is-not-a-framework";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"why-typescript/index.md": {
+	id: "why-typescript/index.md";
+  slug: "why-typescript";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 };
 "projects": {
+"Campaign-Management-App/index.md": {
+	id: "Campaign-Management-App/index.md";
+  slug: "campaign-management-app";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
 "css-library/index.md": {
 	id: "css-library/index.md";
   slug: "css-library";
   body: string;
   collection: "projects";
-  data: any
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"dynamatics/index.md": {
+	id: "dynamatics/index.md";
+  slug: "dynamatics";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
 "ecommerce/index.md": {
 	id: "ecommerce/index.md";
   slug: "ecommerce";
   body: string;
   collection: "projects";
-  data: any
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"file-folder-structure/index.md": {
+	id: "file-folder-structure/index.md";
+  slug: "file-folder-structure";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
 "note-app/index.md": {
 	id: "note-app/index.md";
   slug: "note-app";
   body: string;
   collection: "projects";
-  data: any
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"rest-services-app/index.md": {
+	id: "rest-services-app/index.md";
+  slug: "rest-services-app";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
 "social-media/index.md": {
 	id: "social-media/index.md";
   slug: "social-media";
   body: string;
   collection: "projects";
-  data: any
+  data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
 "video-app/index.md": {
 	id: "video-app/index.md";
   slug: "video-app";
   body: string;
   collection: "projects";
-  data: any
+  data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
 };
 "work": {
-"equip.md": {
-	id: "equip.md";
-  slug: "equip";
-  body: string;
-  collection: "work";
-  data: any
-} & { render(): Render[".md"] };
 "intangles.md": {
 	id: "intangles.md";
   slug: "intangles";
   body: string;
   collection: "work";
-  data: any
+  data: InferEntrySchema<"work">
 } & { render(): Render[".md"] };
-"tgs.md": {
-	id: "tgs.md";
-  slug: "tgs";
+"mirraw.md": {
+	id: "mirraw.md";
+  slug: "mirraw";
   body: string;
   collection: "work";
-  data: any
+  data: InferEntrySchema<"work">
 } & { render(): Render[".md"] };
 };
 
@@ -277,5 +312,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = never;
+	export type ContentConfig = typeof import("../../src/content/config.js");
 }

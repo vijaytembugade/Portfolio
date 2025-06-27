@@ -1,56 +1,55 @@
 ---
-title: "Crystal UI"
-description: "A Bootstrap like CSS library."
-date: "feb 28 2022"
-demoURL: "https://crystal-ui.netlify.app/"
-repoURL: "https://github.com/MiheerTamkhane/CrystalUi"
+title: "Xenon Designs - A Component Library"
+description: "A open source Design System and CSS component Library"
+date: "Feb 28, 2022"
+demoURL: "https://xenon-designs.netlify.app/"
+repoURL: "https://github.com/vijaytembugade/XenonUI-Component-Library"
 ---
 
-# Crystal Ui
+# Xenon Designs
 
-Crystal UI is an elegantly designed CSS Component Library integrated with pre-defined class styles for various frequently used components. Build your next UI faster ⏩ & magical ✨ with Crystal UI.
+## Description
 
-## Live Preview
+Xenon designs is CSS component Library having coherent, practical and convenient
+functionalities to build modern web apps.
+It is open source designing and styling framework, which helps developers can create conventional styles and components. It has pre-defined classes , fonts , icons and typographies which will ease the productions of web apps.
 
-[crystal-ui.netlify.app](https://crystal-ui.netlify.app/)
+## Technology Used
 
-## Installation
+This project is build using following technologies.
 
-To use Crystalui in your UI, copy the `link` tag below and paste it in the `<head>` tag of your html file, above all other style sheets.
+- HTML
+- Vanilla CSS
+- Google Icons
+
+## Live preview
+
+[Click here to see website ](https://xenon-designs.netlify.app/)
+
+## Components Defined in Xenon-Designs
+
+- Avatar
+- Alert
+- Badges
+- Buttons
+- Cards
+- Images
+- Inputs
+- Toast
+- Lists
+- Rating
+
+## How to use
 
 ```html
-<link rel="stylesheet" href="https://crystal-ui.netlify.app/components.css" />
+<link
+  href="https://xenon-designs.netlify.app/Components/main.css"
+  rel="stylesheet"
+/>
 ```
 
-Or paste the following import statement at the beginning of your CSS file.
-
-```css
-@import url("https://crystal-ui.netlify.app/components.css");
-```
-
-## Components
-
-- [Colors](https://crystal-ui.netlify.app/component.html#colors)
-- [Alerts](https://crystal-ui.netlify.app/component.html#alert)
-- [Avatars](https://crystal-ui.netlify.app/component.html#avatar)
-- [Badges](https://crystal-ui.netlify.app/component.html#badge)
-- [Buttons](https://crystal-ui.netlify.app/component.html#button)
-- [Cards](https://crystal-ui.netlify.app/component.html#card)
-- [Lists](https://crystal-ui.netlify.app/component.html#lists)
-- [Images](https://crystal-ui.netlify.app/component.html#image)
-- [Inputs](https://crystal-ui.netlify.app/component.html#input)
-- [Ratings](https://crystal-ui.netlify.app/component.html#rating)
-- [Toasts](https://crystal-ui.netlify.app/component.html#toast)
-- [Text Utilities](https://crystal-ui.netlify.app/component.html#text-utils)
-- [Navbar](https://crystal-ui.netlify.app/component.html#nav)
-- [Modal](https://crystal-ui.netlify.app/component.html#modal)
-- [Grids](https://crystal-ui.netlify.app/component.html#grid)
-- [Slider](https://crystal-ui.netlify.app/component.html#slider)
-
-## Tech Stack
-
-HTML, CSS & JS
+Put the above link tag with link in `head` of main html file of the project.
 
 ## Author
 
-- [@Miheer](https://github.com/miheertamkhane)
+@vijaytembugade

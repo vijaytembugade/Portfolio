@@ -1,63 +1,57 @@
 ---
-title: "Remarque"
-description: "A Note keep application."
+title: "kXeep - A Note taking web app"
+description: "kXeep is notetaking web app, where you can create , maintain and modify the daily routine and tasks."
 date: "April 29 2022"
-demoURL: "https://remarque.netlify.app/"
-repoURL: "https://github.com/MiheerTamkhane/remarque"
+demoURL: "https://kxeep.netlify.app/"
+repoURL: "https://github.com/vijaytembugade/Xenon-Notes-Keep-App"
 ---
 
-# Remarque
+# kXeep - A Note taking web app
 
-[Remarque](https://remarque.netlify.app/)(Note) is the best place to Note down quick thoughts
-or to save longer notes filled with
-images, web links, scanned documents, handwritten
-notes, or sketches. And with iBee, it's easy to
-keep all your devices in sync, so you’ll
-always have your notes with you.
-
-## Description
-
-This project is Note taking web app Built in React.js a JavaScript Library.
-
-**This site usees React.js in Core.**
-React.js is the most popular front-end JavaScript library for building Web applications. React.js or Reactjs or simply React are different ways to represent React.js. Most fortune 500 companies use Reactjs
-
-## Features
-
-- Home Page
-- Add a Note
-  - Rich Text Editor
-- Edit & Delete Note
-- Filter by tags.
-- Date on Note.
-- Change Card Color
-- Add Tags to notes
-- Trash & Archive
-  - Archive Notes.
-  - Delete permantly.
-- Authentication
-  - Sign-up
-  - Login
-  - Logout
-- Add Images
+kXeep is notetaking web app, where you can create , maintain and modify the daily routine and tasks.
 
 ## Live Preview
 
-Link : [Remarque](https://remarque.netlify.app/)
-
-## Note-app Backend
-
-This project contains the Mock Backend created for Note-App. It contains different API end-points and database configuration for building Note-app; so that you can focus on building Frontend.
+https://kxeep.netlify.app/
 
 ## Tech Stack
 
-- **[React.js](https://reactjs.org/)**
-- **[JavaScript](https://www.javascript.com/)**
-- **[CSS3]()**
-- **[HTML5]()**
-- **[React.js](https://mockbee.netlify.app/)**
+- React
+- MockBee (Mock-backend)
 
-## 🚀 About Me
+## How to Start on local system
 
-**Hi, I'm Miheer**
-⚡ [GitHub](https://github.com/MiheerTamkhane)
+1. clone the repo `git clone https://github.com/vijaytembugade/Xenon-Ecommerce-App`
+2. change the directory to cloned repo
+3. open command-prompt or terminal
+4. type `npm install`
+5. then `npm start`
+
+## Functionalities
+
+- Create a Note
+- See individual note
+- Edit a note
+- Move note Archives
+- Remove Notes From Archives
+- Move note to trash
+- Remove and delete from trash
+- Filter by date and priority
+- Filter by Labels
+- Authentication
+- Dark/Light Mode
+- Responsiveness
+
+## Utilizations
+
+- useState and contextAPI
+- useReducer and useContext
+- custom context hooks
+- Frontend authentication(with JWT)
+- Quill - Rich Text Editor
+- React-router-DOM
+- Axios
+
+## Author
+
+@vijaytembugade

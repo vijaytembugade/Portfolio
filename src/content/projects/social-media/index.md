@@ -1,89 +1,57 @@
 ---
-title: "Otakusurf"
-description: "A social media application for Anime lovers."
+title: "Sapienss - A Social Media App"
+description: "Sapienss is a social media platform build for taking your ideas onboard with entire world."
 date: "May 20 2022"
-demoURL: "https://otakusurf.netlify.app/register"
-repoURL: "https://github.com/MiheerTamkhane/social-media"
+demoURL: "https://sapienss.netlify.app/"
+repoURL: "https://github.com/vijaytembugade/Xenon-Social-Media-App"
 ---
 
-# [OtakuSurf](https://otakusurf.netlify.app/) | Social Media 📱
+# Sapienss - A Social Media App
 
-OtakuSurf is a social media app for Anime lovers, here you can share all your animes, moments or best shots. you can like others posts, comments and also saved the post. This app is built-in reactJs.
+Sapienss is a social media platform build for taking your ideas onboard with entire world.
 
-## Live
+## Live preview Link
 
-[otakusurf.netlify.app](https://otakusurf.netlify.app/)
-
-## Features
-
-- Responsive
-- User Authorization
-    - Sign In
-    - Sign Up
-    - Sign Out
-- Protected/Private Routes
-- Feed Page
-    - Create a Post
-    - Like/Dislike Post
-    - Bookmark/Unbookmark Post
-    - Edit Post
-    - Delete Post
-- Explore Page
-    - All Posts
-- Bookmarks Page
-    - Bookmarked Posts
-    - Unbookmark Post
-- Profile Page
-    - User Profile
-    - User Posts
-    - update Profile
-    - Follow/Unfollow
-- Suggested Profiles
-- Filters
-    - Sort by Date
-    - Show Trending
-
+https://sapienss.netlify.app/
 
 ## Tech Stack
 
-**Client:** ReactJs, React Router v6, Redux Toolkit, React Redux and Tailwind CSS
+- React
+- MockBee (Mock-backend)
+- Redux Tool Kit
+- Tailwind CSS
 
-**Server:** Mockbee (Mock Backend)
+## How to Start on local system
 
+1. clone the repo `git clone https://github.com/vijaytembugade/Xenon-Ecommerce-App`
+2. change the directory to cloned repo
+3. open command-prompt or terminal
+4. type `npm install`
+5. then `npm start`
 
-## Run Locally
+## Functionalities
 
-Clone the project
+- Create a Post
+- Edit and Delete the post
+- Filter and sorts by for posts
+- Frontend Authentication
+- Responsive design
+- Loader
+- User feeds
+- User profile
+- Follow / Unfollow
+- Bookmark feeds
 
-```bash
-  git clone https://github.com/MiheerTamkhane/social-media.git
-```
+## Utilization
 
-Go to the project directory
+- Redux and Redux-tool-kit
+- React-redux
+- Frontend authentication(with JWT)
+- Localstorage
+- React-router-DOM
+- Axios
+- flowbite
 
-```bash
-  cd social-media
-```
+## Author
 
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm start
-```
-
-
-## Acknowledgements
-
- - [neoG Camp](https://neog.camp/)
- - [Tailwind CSS](https://tailwindcss.com/)
-
-
-## Developer
-
-- [@MiheerTamkhane](https://github.com/MiheerTamkhane)
+@vijaytembugade
