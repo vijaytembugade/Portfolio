@@ -179,6 +179,20 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"access-modifiers-in-typescript/index.md": {
+	id: "access-modifiers-in-typescript/index.md";
+  slug: "access-modifiers-in-typescript";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"generic-in-typescript/index.md": {
+	id: "generic-in-typescript/index.md";
+  slug: "generic-in-typescript";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "js-before-js-framework/index.md": {
 	id: "js-before-js-framework/index.md";
   slug: "js-before-js-framework";
