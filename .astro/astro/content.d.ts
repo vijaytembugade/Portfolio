@@ -237,8 +237,8 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "projects": {
-"Campaign-Management-App/index.md": {
-	id: "Campaign-Management-App/index.md";
+"campaign-management-app/index.md": {
+	id: "campaign-management-app/index.md";
   slug: "campaign-management-app";
   body: string;
   collection: "projects";
@@ -299,6 +299,29 @@ declare module 'astro:content' {
   body: string;
   collection: "projects";
   data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"vytix-project-management-app/index.md": {
+	id: "vytix-project-management-app/index.md";
+  slug: "vytix-project-management-app";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+};
+"techTalk": {
+"micro-frontend/index.md": {
+	id: "micro-frontend/index.md";
+  slug: "micro-frontend";
+  body: string;
+  collection: "techTalk";
+  data: any
+} & { render(): Render[".md"] };
+"redux-at-scale/index.md": {
+	id: "redux-at-scale/index.md";
+  slug: "redux-at-scale";
+  body: string;
+  collection: "techTalk";
+  data: any
 } & { render(): Render[".md"] };
 };
 "work": {

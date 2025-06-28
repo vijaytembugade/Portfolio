@@ -31,6 +31,21 @@ const work = await Promise.all(
     return { ...item, Content };
   })
 );
+
+const allTechTalks = (await getCollection("techTalk"))
+  .sort(
+    (a, b) =>
+      new Date(b.data.dateStart).valueOf() -
+      new Date(a.data.dateStart).valueOf()
+  )
+  .slice(0, SITE.NUM_WORKS_ON_HOMEPAGE);
+
+const techTalks = await Promise.all(
+  allTechTalks.map(async (item) => {
+    const { Content } = await item.render();
+    return { ...item, Content };
+  })
+);
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
@@ -43,9 +58,6 @@ const work = await Promise.all(
       </h2>
       <p id="loadTime" class="animate font-bold mb-2 sm:mb-0"></p>
     </div>
-    <!-- <h4 class="animate text-xl font-semibold text-black dark:text-white mb-2">
-      Hi, I'm Miheer <span class="text-xl">👋🏻</span>
-    </h4> -->
     <div class="space-y-16">
       <section class="space-y-3 text-black dark:text-white">
         <p class="animate">
@@ -72,24 +84,25 @@ const work = await Promise.all(
           Technologies including NodeJS, ExpressJS, MongoDB, Prisma, JWT, PostgreSQL,
           and Ruby on Rails
         </p>
-        <!-- <p class="animate">
-          At Intangles Lab, I spearheaded the migration of frontend tech stacks,
-          significantly optimizing performance by reducing bundle size by 52%
-          and improving Redux store management. I also developed over 40+
-          reusable Storybook UI components, establishing a consistent design
-          language. My work included integrating Google Maps APIs for real-time
-          vehicle tracking and developing various comprehensive dashboards for
-          certification, financial analysis, and predictive health. I also
-          optimized deployment pipelines, reducing CircleCI build time by
-          approximately 25% and migrating to GitHub Actions.
+        <p class="animate hidden">
+          At Intangles Lab, I am working as Senior Frontend Developer where I
+          spearheaded the migration of frontend tech stacks, significantly
+          optimizing performance by reducing bundle size by 52% and improving
+          Redux store management. I also developed over 40+ reusable Storybook
+          UI components, establishing a consistent design language. My work
+          included integrating Google Maps APIs for real-time vehicle tracking
+          and developing various comprehensive dashboards for certification,
+          financial analysis, and predictive health. I also optimized deployment
+          pipelines, reducing CircleCI build time by approximately 25% and
+          migrating to GitHub Actions.
         </p>
-        <p class="animate">
+        <p class="animate hidden">
           Before this, I contributed to e-commerce platform development at
           Mirraw, focusing on user-friendly interfaces and system efficiency. I
           actively share my expertise through tech talks at ReactJsPune and
           contribute to open-source projects, and I'm always open to new
           collaborations or mentorship opportunities.
-        </p> -->
+        </p>
       </section>
       <section class="flex animate gap-3 items-center">
         <Link
@@ -137,16 +150,91 @@ const work = await Promise.all(
         </Link>
       </section>
 
+      <section class="animate space-y-6 hidden">
+        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+          <h1 class="font-semibold text-xl text-black dark:text-white">
+            Tech Talk
+          </h1>
+        </div>
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/feed/update/urn:li:activity:7326983902756007936/"
+          class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+        >
+          <div class="flex flex-col flex-1 truncate">
+            <div class="font-semibold">
+              Redux at Scale: Building High Performance React applications with
+              Redux
+              <div class="text-sm">
+                Presented and Talked about Advanced Redux Architecture with Saga
+                , Data Normalization, Dynamic Module Loadlers and Reselect.
+              </div>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="absolute top-1/2 right-2 -translate-y-1/2 size-5 stroke-2 fill-none stroke-current"
+            >
+              <line
+                x1="5"
+                y1="12"
+                x2="19"
+                y2="12"
+                class="translate-x-3 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"
+              ></line>
+              <polyline
+                points="12 5 19 12 12 19"
+                class="-translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"
+              ></polyline>
+            </svg>
+          </div>
+        </a>
+        <a
+          target="_blank"
+          href="https://x.com/vijaytembugade/status/1682689671015575553"
+          class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+        >
+          <div class="flex flex-col flex-1 truncate">
+            <div class="font-semibold">
+              Tech Talk on Frontend Design with Microfrontends @ReactJsPune
+              <div class="text-sm">
+                Presented innovative microfrontend architecture techniques at
+                ReactJsPune Meetup, showcasing Module Federation with Webpack as
+                a solution for modular and independently deployable frontend
+                components.
+              </div>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="absolute top-1/2 right-2 -translate-y-1/2 size-5 stroke-2 fill-none stroke-current"
+            >
+              <line
+                x1="5"
+                y1="12"
+                x2="19"
+                y2="12"
+                class="translate-x-3 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"
+              ></line>
+              <polyline
+                points="12 5 19 12 12 19"
+                class="-translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"
+              ></polyline>
+            </svg>
+          </div>
+        </a>
+      </section>
+
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
           <h5 class="font-semibold text-xl text-black dark:text-white">
-            Latest posts
+            Tech Talks
           </h5>
-          <Link href="/blog"> See all posts </Link>
+          <!-- <Link href="/techTalk"> See all posts </Link> -->
         </div>
         <ul class="flex flex-col gap-4">
           {
-            blog.map((post) => (
+            techTalks.map((post) => (
               <li>
                 <ArrowCard entry={post} />
               </li>
@@ -194,6 +282,24 @@ const work = await Promise.all(
             projects.map((project) => (
               <li>
                 <ArrowCard entry={project} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+          <h5 class="font-semibold text-xl text-black dark:text-white">
+            Latest Blogs
+          </h5>
+          <Link href="/blog"> See all blogs </Link>
+        </div>
+        <ul class="flex flex-col gap-4">
+          {
+            blog.map((post) => (
+              <li>
+                <ArrowCard entry={post} />
               </li>
             ))
           }
