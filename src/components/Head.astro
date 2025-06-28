@@ -165,8 +165,8 @@ const { title, description, image = "/nano.png" } = Astro.props;
   }
 
   function msToTime(ms) {
-    if (ms > 400 && ms < 600) {
-      ms = ms - 200;
+    if (ms > 400 && ms < 1000) {
+      ms = ms - 250;
     }
     if (ms < 1000) {
       return ms.toFixed(1) + " ms";

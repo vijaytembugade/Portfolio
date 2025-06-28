@@ -1,5 +1,5 @@
 ---
-title: "Nested File and Folder Structure"
+title: "Xenon-Stationery - An Ecommerce Web App"
 description: "Xenon stationary is online platform for notebooks, diaries and notepads."
 date: "Mar 26 2022"
 demoURL: "https://xenon-stationery.netlify.app/"
