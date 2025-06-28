@@ -2,7 +2,7 @@
 title: "Dynamatics"
 description: "Charting and Data Visualization Project"
 date: "Dec 28, 2024"
-demoURL: "https://dynamatics.netlify.app/overview"
+demoURL: "https://dynamatics.netlify.app"
 repoURL: "https://github.com/vijaytembugade/dynamatics"
 ---
 
