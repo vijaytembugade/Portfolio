@@ -237,9 +237,16 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "projects": {
-"campaign-management-app/index.md": {
-	id: "campaign-management-app/index.md";
+"Campaign-Management-App/index.md": {
+	id: "Campaign-Management-App/index.md";
   slug: "campaign-management-app";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"chating-mousie/index.md": {
+	id: "chating-mousie/index.md";
+  slug: "chating-mousie";
   body: string;
   collection: "projects";
   data: InferEntrySchema<"projects">
@@ -254,6 +261,13 @@ declare module 'astro:content' {
 "dynamatics/index.md": {
 	id: "dynamatics/index.md";
   slug: "dynamatics";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"e-wallet-vt/index.md": {
+	id: "e-wallet-vt/index.md";
+  slug: "e-wallet-vt";
   body: string;
   collection: "projects";
   data: InferEntrySchema<"projects">
