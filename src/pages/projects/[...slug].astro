@@ -22,7 +22,14 @@ const project = Astro.props;
 const { Content } = await project.render();
 ---
 
-<PageLayout title={project.data.title} description={project.data.description}>
+<PageLayout
+  title={project.data.title}
+  description={project.data.description}
+  image={project.data.image}
+  ogType="article"
+  publishedTime={project.data.date}
+  modifiedTime={project.data.date}
+>
   <Container>
     <div class="animate">
       <BackToPrev href="/projects">

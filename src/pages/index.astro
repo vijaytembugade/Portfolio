@@ -5,7 +5,7 @@ import PageLayout from "@layouts/PageLayout.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
 import { dateRange } from "@lib/utils";
-import { SITE, HOME, SOCIALS } from "@consts";
+import { SITE, HOME } from "@consts";
 
 const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
@@ -33,11 +33,7 @@ const work = await Promise.all(
 );
 
 const allTechTalks = (await getCollection("techTalk"))
-  .sort(
-    (a, b) =>
-      new Date(b.data.dateStart).valueOf() -
-      new Date(a.data.dateStart).valueOf()
-  )
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_WORKS_ON_HOMEPAGE);
 
 const techTalks = await Promise.all(
@@ -51,11 +47,11 @@ const techTalks = await Promise.all(
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
     <div class="flex flex-col-reverse sm:flex-row items-start justify-between">
-      <h2
+      <h1
         class="animate text-2xl sm:text-3xl font-semibold dark:text-white/50 mb-6"
       >
         Code, Build & Ship
-      </h2>
+      </h1>
       <p id="loadTime" class="animate font-bold mb-2 sm:mb-0"></p>
     </div>
     <div class="space-y-16">
@@ -64,16 +60,15 @@ const techTalks = await Promise.all(
           I'm Vijay Tembugade,<strong>
             Product-Centric Fullstack Developer
           </strong>
-          with over 4 years of experience, specializing in building high-performance,
+          with over 4+ years of experience, specializing in building high-performance,
           scalable, and maintainable web applications. My passion lies in deeply
           understanding end to end product needs and translating them into robust,
           user-centric solutions.
         </p>
 
         <p class="animate">
-          Currently working at <strong>Intangles Lab</strong>, as Senior
-          Software Engineer, Building B2B SAAS platform for Fleet Management and
-          Vehicle Telematics solutions.
+          I am currently working as a Software Engineer 2 at <strong>Zendesk</strong> in Pune, focusing on Custom Object and Custom Data Logic.
+          Previously I worked as a Senior Software Developer at Intangles Lab, building B2B SaaS platforms for Fleet Management and Vehicle Telematics solutions.
         </p>
 
         <p class="animate">
@@ -81,8 +76,13 @@ const techTalks = await Promise.all(
           such as ReactJS, JavaScript & TypeScript, HTML5, CSS3, Redux, Webpack,
           NextJs, MaterialUI, TailwindCSS, Data Grids, Storybook, Circle-CI, and
           GitHub Actions. My expertise also encompasses <strong>Backend</strong>
-          Technologies including NodeJS, ExpressJS, MongoDB, Prisma, JWT, PostgreSQL,
-          and Ruby on Rails
+          Technologies including NodeJS, ExpressJS, MongoDB, Prisma, JWT, PostgreSQL, Rspec,
+          and Ruby on Rails.
+        </p>
+
+        
+        <p class="animate hidden">
+          I am currently working as a Software Engineer 2 at Zendesk in Pune, focusing on Custom Object and Custom Data Logic. In this role, I have improved application stability through robust testing with React Testing Library and designed interactive visualizations using React Flow to enhance user workflow efficiency
         </p>
         <p class="animate hidden">
           At Intangles Lab, I am working as Senior Frontend Developer where I
@@ -142,7 +142,7 @@ const techTalks = await Promise.all(
           >
         </Link>
         <Link
-          href="https://drive.google.com/file/d/1d-VvL2HkwpaUho6WxFLQQQoAN3asP4RU/view?usp=sharing"
+          href="https://drive.google.com/file/d/112Q9oX6eZdVtKg6bVjTotJYGsOLfOqlV/view?usp=sharing"
           external
           className="animate text-xl w-10 fill-black/50 hover:fill-black hover:dark:fill-white dark:fill-white/50  cursor-pointer"
         >
@@ -152,9 +152,9 @@ const techTalks = await Promise.all(
 
       <section class="animate space-y-6 hidden">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h1 class="font-semibold text-xl text-black dark:text-white">
+          <h2 class="font-semibold text-xl text-black dark:text-white">
             Tech Talk
-          </h1>
+          </h2>
         </div>
         <a
           target="_blank"
@@ -245,9 +245,9 @@ const techTalks = await Promise.all(
 
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h1 class="font-semibold text-xl text-black dark:text-white">
+          <h2 class="font-semibold text-xl text-black dark:text-white">
             Work Experience
-          </h1>
+          </h2>
           <Link href="/work"> See all work </Link>
         </div>
         <ul class="flex flex-col space-y-4">
@@ -272,9 +272,9 @@ const techTalks = await Promise.all(
 
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h1 class="font-semibold text-xl text-black dark:text-white">
+          <h2 class="font-semibold text-xl text-black dark:text-white">
             Personal projects
-          </h1>
+          </h2>
           <Link href="/projects"> See all projects </Link>
         </div>
         <ul class="flex flex-col gap-4">

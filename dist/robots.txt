@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://astro-nano-demo.vercel.app/sitemap-index.xml
+Sitemap: https://vijaytembugade.web.app/sitemap-index.xml
+Host: https://vijaytembugade.web.app/

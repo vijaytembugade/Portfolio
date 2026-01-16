@@ -328,14 +328,14 @@ declare module 'astro:content' {
   slug: "micro-frontend";
   body: string;
   collection: "techTalk";
-  data: any
+  data: InferEntrySchema<"techTalk">
 } & { render(): Render[".md"] };
 "redux-at-scale/index.md": {
 	id: "redux-at-scale/index.md";
   slug: "redux-at-scale";
   body: string;
   collection: "techTalk";
-  data: any
+  data: InferEntrySchema<"techTalk">
 } & { render(): Render[".md"] };
 };
 "work": {
@@ -349,6 +349,13 @@ declare module 'astro:content' {
 "mirraw.md": {
 	id: "mirraw.md";
   slug: "mirraw";
+  body: string;
+  collection: "work";
+  data: InferEntrySchema<"work">
+} & { render(): Render[".md"] };
+"zendesk.md": {
+	id: "zendesk.md";
+  slug: "zendesk";
   body: string;
   collection: "work";
   data: InferEntrySchema<"work">

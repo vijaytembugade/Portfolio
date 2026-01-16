@@ -4,46 +4,146 @@ import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-600.css";
 import "@fontsource/lora/400.css";
 import "@fontsource/lora/600.css";
+import { SITE, SOCIALS } from "@consts";
+
 interface Props {
   title: string;
   description: string;
   image?: string;
+  ogType?: "website" | "article";
+  noindex?: boolean;
+  publishedTime?: string | Date;
+  modifiedTime?: string | Date;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteUrl = Astro.site ?? new URL(SITE.URL);
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 
-const { title, description, image = "/nano.png" } = Astro.props;
+const {
+  title,
+  description,
+  image = "/astro-nano.png",
+  ogType = "website",
+  noindex = false,
+  publishedTime,
+  modifiedTime,
+} = Astro.props;
+
+const ogImageUrl = new URL(image, siteUrl);
+const authorName = "Vijay Tembugade";
+const sameAs = SOCIALS.map((social) => social.HREF);
+const toIsoString = (value?: string | Date) =>
+  value instanceof Date ? value.toISOString() : value;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: authorName,
+  url: siteUrl.href,
+  email: SITE.EMAIL,
+  sameAs,
+  jobTitle: "Fullstack Developer",
+};
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE.NAME,
+  url: siteUrl.href,
+  description,
+  inLanguage: "en",
+  publisher: personSchema,
+};
+
+const articleSchema =
+  ogType === "article" && publishedTime
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: title,
+        description,
+        image: ogImageUrl.href,
+        datePublished: toIsoString(publishedTime),
+        dateModified: toIsoString(modifiedTime ?? publishedTime),
+        author: personSchema,
+        publisher: personSchema,
+        mainEntityOfPage: canonicalURL.href,
+      }
+    : null;
+
+const structuredData = [personSchema, webSiteSchema, articleSchema].filter(
+  Boolean
+);
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg" href="/favicon.svg" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<meta name="color-scheme" content="light dark" />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0b0b0b" media="(prefers-color-scheme: dark)" />
 <!-- <link rel="icon" type="image/svg" href="/favicon.svg" media="(prefers-color-scheme: light)" sizes="32x32"> -->
 <!-- <link rel="icon" type="image/x-icon" href="/favicon.svg" sizes="32x32"> -->
 <meta name="generator" content={Astro.generator} />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title={`${SITE.NAME} RSS`}
+  href={new URL("rss.xml", siteUrl).href}
+/>
+<link
+  rel="sitemap"
+  type="application/xml"
+  title={`${SITE.NAME} Sitemap`}
+  href={new URL("sitemap-index.xml", siteUrl).href}
+/>
+{SOCIALS.map((social) => (
+  <link rel="me" href={social.HREF} />
+))}
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+<meta name="author" content={authorName} />
+<meta name="keywords" content={SITE.KEYWORDS.join(", ")} />
+<meta name="robots" content={noindex ? "noindex,nofollow" : "index,follow"} />
+<meta name="application-name" content={SITE.NAME} />
+<meta name="apple-mobile-web-app-title" content={SITE.NAME} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content={ogType} />
 <meta property="og:url" content={Astro.url} />
+<meta property="og:site_name" content={SITE.NAME} />
+<meta property="og:locale" content="en_US" />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={ogImageUrl.href} />
+<meta property="og:image:alt" content={title} />
+{ogType === "article" && publishedTime && (
+  <meta property="article:published_time" content={toIsoString(publishedTime)} />
+)}
+{ogType === "article" && modifiedTime && (
+  <meta property="article:modified_time" content={toIsoString(modifiedTime)} />
+)}
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={ogImageUrl.href} />
+<meta property="twitter:site" content={SITE.TWITTER_HANDLE} />
+<meta property="twitter:creator" content={SITE.TWITTER_HANDLE} />
+
+<!-- Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
 <script>
   import type { TransitionBeforeSwapEvent } from "astro:transitions/client";

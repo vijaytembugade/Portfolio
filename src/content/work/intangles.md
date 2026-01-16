@@ -2,7 +2,7 @@
 company: "Intangles Lab, Pune"
 role: "Senior Frontend Developer"
 dateStart: "August 12, 2022"
-dateEnd: "current"
+dateEnd: "September 19, 2025"
 ---
 
 #### Project Metamorphosis: Performance Optimization and UI Revamp

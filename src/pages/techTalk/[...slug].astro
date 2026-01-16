@@ -2,10 +2,8 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
-import FormattedDate from "@components/FormattedDate.astro";
 import { readingTime } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
-import Link from "@components/Link.astro";
 
 export async function getStaticPaths() {
   const talks = (await getCollection("techTalk"))
@@ -22,7 +20,14 @@ const teckTalk = Astro.props;
 const { Content } = await teckTalk.render();
 ---
 
-<PageLayout title={teckTalk.data.title} description={teckTalk.data.description}>
+<PageLayout
+  title={teckTalk.data.title}
+  description={teckTalk.data.description}
+  image={teckTalk.data.image}
+  ogType="article"
+  publishedTime={teckTalk.data.date}
+  modifiedTime={teckTalk.data.date}
+>
   <Container>
     <div class="animate">
       <BackToPrev href="/"> Back </BackToPrev>

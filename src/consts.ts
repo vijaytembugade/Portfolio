@@ -3,6 +3,18 @@ import type { Site, Metadata, Socials } from "@types";
 export const SITE: Site = {
   NAME: "Hi, I'm Vijay",
   EMAIL: "vijaytembugade21@gmail.com",
+  URL: "https://vijaytembugade.web.app",
+  KEYWORDS: [
+    "Vijay Tembugade",
+    "Fullstack Developer",
+    "Frontend Developer",
+    "Software Engineer",
+    "React",
+    "TypeScript",
+    "Node.js",
+    "Portfolio"
+  ],
+  TWITTER_HANDLE: "@vijaytembugade",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 3,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
